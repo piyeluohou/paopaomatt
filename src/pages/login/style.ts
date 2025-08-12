@@ -1,67 +1,398 @@
+import { css } from '@emotion/css';
+
 // 登录页面样式定义
-export const container = "min-h-screen flex";
+export const container = () => css`
+  min-height: 100vh;
+  display: flex;
+`;
 
 // 左侧内容区域样式
-export const leftSection = "flex-1 bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col justify-center items-center p-8";
-export const leftContent = "max-w-md text-center";
-export const title = "text-2xl font-bold text-gray-800 mb-2";
-export const subtitle = "text-gray-600 mb-8";
+export const leftSection = () => css`
+  flex: 1;
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+`;
+
+export const leftContent = () => css`
+  max-width: 28rem;
+  text-align: center;
+`;
+
+export const title = () => css`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+`;
+
+export const subtitle = () => css`
+  color: #4b5563;
+  margin-bottom: 2rem;
+`;
 
 // 插图区域样式
-export const illustrationContainer = "relative w-80 h-64 mx-auto";
-export const illustrationWrapper = "absolute inset-0 flex items-center justify-center";
-export const characterContainer = "relative";
+export const illustrationContainer = () => css`
+  position: relative;
+  width: 20rem;
+  height: 16rem;
+  margin: 0 auto;
+`;
 
-// 桌子样式
-export const desk = "w-32 h-16 bg-white rounded-lg shadow-lg mb-4 relative";
+export const illustrationWrapper = () => css`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-// 图表元素样式
-export const chartElement1 = "absolute -top-8 -right-4 w-16 h-12 bg-white rounded shadow-md flex items-center justify-center";
-export const chartCircle = "w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-green-400";
-export const chartElement2 = "absolute -top-6 -left-8 w-12 h-8 bg-white rounded shadow-md flex items-center justify-center";
-export const chartBars = "flex space-x-1";
-export const chartBar1 = "w-1 h-4 bg-blue-400 rounded";
-export const chartBar2 = "w-1 h-6 bg-green-400 rounded";
-export const chartBar3 = "w-1 h-3 bg-yellow-400 rounded";
-export const chartElement3 = "absolute -bottom-4 right-8 w-10 h-6 bg-white rounded shadow-md flex items-center justify-center";
-export const chartGreenBar1 = "w-1 h-2 bg-green-400 rounded";
-export const chartGreenBar2 = "w-1 h-3 bg-green-400 rounded";
-export const chartGreenBar3 = "w-1 h-4 bg-green-400 rounded";
+export const characterContainer = () => css`
+  position: relative;
+`;
 
-// 人物样式
-export const character = "relative z-10";
-export const head = "w-12 h-12 bg-gradient-to-b from-yellow-200 to-yellow-300 rounded-full mx-auto mb-2 relative";
-export const hair = "w-8 h-6 bg-gray-800 rounded-t-full absolute top-1 left-2";
-export const body = "w-16 h-20 bg-gradient-to-b from-blue-500 to-blue-600 rounded-t-2xl mx-auto relative";
-export const leftArm = "absolute -left-3 top-4 w-6 h-12 bg-blue-500 rounded-full transform -rotate-12";
-export const rightArm = "absolute -right-3 top-4 w-6 h-12 bg-blue-500 rounded-full transform rotate-12";
-export const laptop = "absolute top-8 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-gray-300 rounded-sm";
-export const laptopScreen = "w-8 h-4 bg-gray-800 rounded-sm mx-auto mt-1";
-export const legs = "w-12 h-16 bg-gray-800 mx-auto rounded-b-lg";
+export const desk = () => css`
+  width: 8rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+  position: relative;
+`;
 
-// 植物装饰样式
-export const plant = "absolute bottom-0 right-4 w-8 h-12";
-export const pot = "w-6 h-8 bg-orange-200 rounded-t-full mx-auto";
-export const leaf1 = "w-8 h-4 bg-green-500 rounded-full mx-auto -mt-2";
-export const leaf2 = "w-6 h-3 bg-green-400 rounded-full mx-auto -mt-1";
+export const chartElement1 = () => css`
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  width: 4rem;
+  height: 3rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-// 右侧表单区域
-export const rightSection = "w-96 bg-white flex flex-col justify-center p-8 shadow-xl";
-export const formContainer = "max-w-sm mx-auto w-full";
-export const formTitle = "text-2xl font-bold text-center text-gray-800 mb-8";
-export const form = "space-y-6";
+export const chartCircle = () => css`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(to right, #60a5fa, #34d399);
+`;
 
-// 表单字段
-export const fieldContainer = "";
-export const label = "block text-sm font-medium text-gray-700 mb-2";
-export const input = "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
+export const chartElement2 = () => css`
+  position: absolute;
+  top: -1.5rem;
+  left: -2rem;
+  width: 3rem;
+  height: 2rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-// 复选框
-export const checkboxContainer = "flex items-center";
-export const checkbox = "h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded";
-export const checkboxLabel = "ml-2 block text-sm text-gray-700";
+export const chartBars = () => css`
+  display: flex;
+  gap: 0.25rem;
+`;
 
-// 按钮和链接
-export const submitButton = "w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200";
-export const forgotPasswordContainer = "text-center";
-export const forgotPasswordLink = "text-sm text-red-600 hover:text-red-800";
+export const chartBar1 = () => css`
+  width: 0.25rem;
+  height: 1rem;
+  background-color: #60a5fa;
+  border-radius: 0.125rem;
+`;
+
+export const chartBar2 = () => css`
+  width: 0.25rem;
+  height: 1.5rem;
+  background-color: #34d399;
+  border-radius: 0.125rem;
+`;
+
+export const chartBar3 = () => css`
+  width: 0.25rem;
+  height: 0.75rem;
+  background-color: #fbbf24;
+  border-radius: 0.125rem;
+`;
+
+export const chartElement3 = () => css`
+  position: absolute;
+  bottom: -1rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const chartGreenBar1 = () => css`
+  width: 0.25rem;
+  height: 0.5rem;
+  background-color: #34d399;
+  border-radius: 0.125rem;
+`;
+
+export const chartGreenBar2 = () => css`
+  width: 0.25rem;
+  height: 0.75rem;
+  background-color: #34d399;
+  border-radius: 0.125rem;
+`;
+
+export const chartGreenBar3 = () => css`
+  width: 0.25rem;
+  height: 1rem;
+  background-color: #34d399;
+  border-radius: 0.125rem;
+`;
+
+export const character = () => css`
+  position: relative;
+  z-index: 10;
+`;
+
+export const head = () => css`
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(to bottom, #fef3c7, #fde68a);
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  position: relative;
+`;
+
+export const hair = () => css`
+  width: 2rem;
+  height: 1.5rem;
+  background-color: #1f2937;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 0.25rem;
+  left: 0.5rem;
+`;
+
+export const body = () => css`
+  width: 4rem;
+  height: 5rem;
+  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  border-radius: 1rem 1rem 0 0;
+  margin: 0 auto;
+  position: relative;
+`;
+
+export const leftArm = () => css`
+  position: absolute;
+  left: -0.75rem;
+  top: 1rem;
+  width: 1.5rem;
+  height: 3rem;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+`;
+
+export const rightArm = () => css`
+  position: absolute;
+  right: -0.75rem;
+  top: 1rem;
+  width: 1.5rem;
+  height: 3rem;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  transform: rotate(12deg);
+`;
+
+export const laptop = () => css`
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 1.5rem;
+  background-color: #d1d5db;
+  border-radius: 0.125rem;
+`;
+
+export const laptopScreen = () => css`
+  width: 2rem;
+  height: 1rem;
+  background-color: #1f2937;
+  border-radius: 0.125rem;
+  margin: 0.25rem auto 0;
+`;
+
+export const legs = () => css`
+  width: 3rem;
+  height: 4rem;
+  background-color: #1f2937;
+  margin: 0 auto;
+  border-radius: 0 0 0.5rem 0.5rem;
+`;
+
+export const plant = () => css`
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  width: 2rem;
+  height: 3rem;
+`;
+
+export const pot = () => css`
+  width: 1.5rem;
+  height: 2rem;
+  background-color: #fed7aa;
+  border-radius: 50% 50% 0 0;
+  margin: 0 auto;
+`;
+
+export const leaf1 = () => css`
+  width: 2rem;
+  height: 1rem;
+  background-color: #22c55e;
+  border-radius: 50%;
+  margin: -0.5rem auto 0;
+`;
+
+export const leaf2 = () => css`
+  width: 1.5rem;
+  height: 0.75rem;
+  background-color: #16a34a;
+  border-radius: 50%;
+  margin: -0.25rem auto 0;
+`;
+
+// 右侧登录表单样式
+export const rightSection = () => css`
+  width: 24rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+`;
+
+export const formContainer = () => css`
+  max-width: 20rem;
+  margin: 0 auto;
+  width: 100%;
+`;
+
+export const formTitle = () => css`
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 2rem;
+`;
+
+export const form = () => css`
+  & > * + * {
+    margin-top: 1.5rem;
+  }
+`;
+
+export const fieldContainer = () => css``;
+
+export const label = () => css`
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+`;
+
+export const input = () => css`
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-color: transparent;
+  }
+`;
+
+export const checkboxContainer = () => css`
+  display: flex;
+  align-items: center;
+`;
+
+export const checkbox = () => css`
+  height: 1rem;
+  width: 1rem;
+  color: #2563eb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+`;
+
+export const checkboxLabel = () => css`
+  margin-left: 0.5rem;
+  display: block;
+  font-size: 0.875rem;
+  color: #374151;
+`;
+
+export const submitButton = () => css`
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #1d4ed8;
+  }
+
+  &:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+`;
+
+export const forgotPasswordContainer = () => css`
+  text-align: center;
+`;
+
+export const forgotPasswordLink = () => css`
+  font-size: 0.875rem;
+  color: #dc2626;
+  text-decoration: none;
+
+  &:hover {
+    color: #991b1b;
+  }
+`;
